@@ -15,20 +15,11 @@ const ingredients = [
   'Condiments',
 ];
 
-const ulElement = document.querySelector('ingredients');
+const ingredientsList = document.querySelector("#ingredients");
+ingredients.forEach((ingredient) => {
+  const li = document.createElement("li");
+  li.textContent = ingredient;
+  li.classList.add("item");
+  ingredientsList.appendChild(li);
+});
 
-ingredients.
-  ingredients
-ForEach(ingredient => {
-
-  const liElement = document.createElement('li');
-  liElement.
-
-    textContent = ingredient;
-  liElement.
-
-    classList.add('item');
-  ulElement.ForEach
-
-  appendChild(liElement);
-})

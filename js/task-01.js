@@ -18,14 +18,14 @@
 // Category: Technologies
 // Elements: 5
 
-const categoriesList = document.querySelector('#categories');
-const categoryItems = categoriesList.querySelectorAll('li.item');
-console.log('Number of categories: ${categoryItems.length}');
+const categoriesList = document.querySelector("#categories");
+const categoryItems = categoriesList.querySelectorAll('.item');
+console.log(`Number of categories: ${categoryItems.length}`);
 
-categoryItems.forEach(categoryItem => {
-    const categoryName = categoryItem.querySelector('h2').textContent;
-    const categoryElemements = categoryItem.querySelectorAll('ul li').length;
-    console.log('Category: ${categoryName}');
-    console.log('Elements: ${categoryElemements}');
+categoryItems.forEach((categoryItem) => {
+    const categoryTitle = categoryItem.querySelector("h2").textContent;
+    const categoryElements = categoryItem.querySelectorAll("li");
+    console.log(`Category: ${categoryTitle}`);
+    console.log(`Elements: ${categoryElements.length}`);
 })
 
