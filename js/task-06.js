@@ -4,32 +4,19 @@
 // Якщо введена правильна кількість символів, то border інпуту стає зеленим, якщо неправильна кількість - червоним.
 // Для додавання стилів використовуй CSS - класи valid і invalid, які ми вже додали у вихідні файли завдання.
 
-    #validation-input {
-  border: 3px solid #bdbdbd;
-}
 
-#validation-input.valid {
-  border-color: #4caf50;
-}
+const inputElement = document.getElementById('validation-input');
 
-#validation-input.invalid {
-  border-color: #f44336;
-}
+    inputElement.addEventListener('blur', function () {
+      const desiredLength = parseInt(inputElement.getAttribute('data-length'));
+      const inputValue = inputElement.value.trim();
+      const currentLength = inputValue.length;
 
-const validationInput = document.querySelector('#validation - input');
-const requiredLength = parseInt(validationInput.getAttribute('data-length'));
-    
-function updateValidationStyle(isValid) {
-  validationInput.classList.remove('valid', 'invalid');
-  validationInput.classList.add(isValid ? 'valid' : 'invalid');
-    }
-validationInput.addEventListener('blur', () => {
-    const inputValue = validationInput.value;
-    
-    const isValid = inputValue.length === requiredLength;
-    updateValidationStyle(isValid);
-});
-
-validationInput.addEventListener('focus', () => {
-  validationInput.classList.remove('valid', 'invalid');
-});
+      if (currentLength === desiredLength) {
+        inputElement.classList.remove('invalid');
+        inputElement.classList.add('valid');
+      } else {
+        inputElement.classList.remove('valid');
+        inputElement.classList.add('invalid');
+      }
+    });
